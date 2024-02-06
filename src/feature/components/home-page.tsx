@@ -47,8 +47,7 @@ export const HomePage = () => {
             </Card.Header>
             <Card.Body>
               <Card.Text className="normal-text">
-                I build and maintain software for businesses with technologies
-                such as Java, Javascript, TypeScript, React, Angular and
+                I build and maintain software for businesses with Java, Javascript, TypeScript, React, Angular and
                 Springboot.
               </Card.Text>
             </Card.Body>
