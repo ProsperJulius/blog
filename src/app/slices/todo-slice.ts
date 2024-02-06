@@ -88,7 +88,10 @@ const todoSlice = createSlice({
 
             .addCase(fetchLocalTodos.fulfilled, (state, action) => {
 
-                state.todos = action.payload;
+                if (action.payload) {
+                    state.todos = action.payload;
+
+                }
                 state.status = 'idle';
             })
 
