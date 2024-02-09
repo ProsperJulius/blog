@@ -10,7 +10,6 @@ export const TodoApp = () => {
   const { hash: currentFilter } = useLocation();
 
   const todos = useAppSelector((state) => state.todoSlice.todos);
-  console.log(todos,"them todos")
 
   const completedTodos: Todo[] = todos.filter((todos) => todos.isCompleted);
 

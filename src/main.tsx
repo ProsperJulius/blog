@@ -12,7 +12,9 @@ import { TodoApp } from "./feature/portfolio/todoapp";
 import { PortfolioList } from "./feature/components/portfolio-list";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
-import { fetchLocalTodos } from "./app/slices/todo-slice";
+import { fetchLocalTodos } from "./app/slices/todoapp/todo-slice";
+import { PaintApp } from "./feature/portfolio/paintapp";
+import { CanvasProvider } from "./feature/portfolio/paintapp/CanvasContext";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,8 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <PortfolioList /> },
           { path: "todo", element: <TodoApp /> },
+
+          {path:"paint",element: <PaintApp/>}
         ],
       },
 
@@ -42,7 +46,10 @@ store.dispatch(fetchLocalTodos()); /// dispatch action to fetch todos from the l
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
+      <CanvasProvider>
       <RouterProvider router={router} />
+      </CanvasProvider>
+     
     </Provider>
   </React.StrictMode>
 );

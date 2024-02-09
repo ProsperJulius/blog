@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Todo } from "../../../types";
 import { useAppDispatch } from "../../../app/hooks";
-import { completeTodo, deleteTodo, editTodo } from "../../../app/slices/todo-slice";
+import { completeTodo, deleteTodo, editTodo } from "../../../app/slices/todoapp/todo-slice";
 import classNames from "classnames";
 
 export interface TodoItemProps {

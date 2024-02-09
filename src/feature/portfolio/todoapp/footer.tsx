@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { clearCompleted } from "../../../app/slices/todo-slice";
+import { clearCompleted } from "../../../app/slices/todoapp/todo-slice";
 import { useAppDispatch } from "../../../app/hooks";
 
 export interface TodoFooterProps {

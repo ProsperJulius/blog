@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addTodo } from "../../../app/slices/todo-slice";
+import { addTodo } from "../../../app/slices/todoapp/todo-slice";
 import { useAppDispatch } from "../../../app/hooks";
 
 export const Header = () => {
