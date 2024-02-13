@@ -108,4 +108,3 @@ const setLocalTodos = (todos: Todo[]) => {
 
 export const { completeTodo, deleteTodo, addTodo, editTodo, clearCompleted } = todoSlice.actions;
 export default todoSlice.reducer;
-
