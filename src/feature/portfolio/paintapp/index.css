@@ -4,14 +4,36 @@
   align-items: center;
   padding-left: 80px;
   justify-content: space-between;
-  width: 76.7%;
+  width: 100%;
+  padding: 30px;
+  background-color: #f0ffff;
 }
 .paintapp-header ul {
   display: flex;
   gap: 20px;
   width: 100%;
 }
-.paintapp-header a{
+.paintapp-header a {
+  color: #000;
+}
+.color-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 30px;
+}
+.current-color-container {
+  display: flex;
+  align-items: normal;
+}
+.colors-container {
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+}
+.paintapp-header a {
   text-decoration: none;
 }
 
@@ -23,25 +45,36 @@
   text-decoration: none;
 }
 
-.canvas-container{
+.canvas-container {
   display: flex;
-  justify-content:space-between;
-  gap:20px
+  justify-content: space-between;
+  gap: 20px;
 }
 
-
 .canvas-container canvas {
-  margin: 40px ;
+  margin: 40px;
   cursor: url(./icons/pencil.png) 0 34, auto;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
-.color {
-  width: 24px;
-  height: 24px;
+.current-color {
+  width: 40px;
+  height: 40px;
+  margin: 1px;
+  margin: -40px;
+  border: 1px solid gainsboro;
   cursor: pointer;
-  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf,
-    inset 2px 2px #0a0a0a;
+  border-radius: 20px;
+}
+
+.color {
+  width: 27px;
+  height: 27px;
+  margin: 1px;
+
+  border: 1px solid gainsboro;
+  cursor: pointer;
+  border-radius: 14px;
 }
 
 .colors {
