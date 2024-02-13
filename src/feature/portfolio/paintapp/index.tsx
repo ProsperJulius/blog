@@ -10,6 +10,9 @@ import { clearCanvas, drawStroke, setCanvasSize } from "./canvasUtils";
 import { Stroke } from "../../../types";
 import { endStroke } from "../../../app/slices/paintapp/sharedActions";
 import { redo, undo } from "../../../app/slices/paintapp/historyindex-slice";
+import redoimg from "./icons/redo.png";
+import undoimg from "./icons/undo.png";
+import saveimg from "./icons/save.png";
 
 const WIDTH = 1024;
 const HEIGHT = 768;
@@ -92,30 +95,44 @@ export const PaintApp = () => {
     <div>
       <div className="paintapp-header">
         <ul>
-          <li><a href="#" > File</a></li>
-          <li><a href="#">Edit</a></li>
           <li>
-            <a
-              href="#"
-          
-              onClick={() => dispatch(undo(strokes.length))}
-            >
-              Undo
+            <a href="#"> File</a>
+          </li>
+          <li>
+            <a href="#">Edit</a>
+          </li>
+          <li>
+            {" "}
+            <a href="#">
+              {" "}
+              <img src={saveimg} style={{ height: "27px" }} alt="save" />
             </a>
           </li>
           <li>
-            <a
-              href="#"
-              
-              onClick={() => dispatch(redo())}
-            >
-              {" "}
-              Redo
+            <a href="#" onClick={() => dispatch(undo(strokes.length))}>
+              <img src={undoimg} style={{ height: "27px" }} alt="undo" />
+            </a>
+          </li>
+          <li>
+            <a href="#" onClick={() => dispatch(redo())}>
+              <img src={redoimg} style={{ height: "27px" }} alt="redo" />
             </a>
           </li>
         </ul>
+      </div>
 
-        <ColorPanel />
+      <div className="color-section">
+        <div
+          className="current-color-container"
+          
+        >
+          <div className="current-color" style={{ background: currentStroke.color }}></div>
+        </div>
+
+        <div className="colors-container">
+          <ColorPanel />
+          <p className="text-muted text-center">Colors</p>
+        </div>
       </div>
 
       <div className="canvas-container">
