@@ -96,42 +96,44 @@ export const PaintApp = () => {
       <div className="paintapp-header">
         <ul>
           <li>
-            <a href="#"> File</a>
+            <a href="#" style={{lineHeight:"2.2"}}> File</a>
           </li>
           <li>
-            <a href="#">Edit</a>
+            <a href="#" style={{lineHeight:"2.2"}}>Edit</a>
           </li>
           <li>
             {" "}
             <a href="#">
               {" "}
-              <img src={saveimg} style={{ height: "27px" }} alt="save" />
+              <img src={saveimg} style={{ height: "19px", }} alt="save" />
             </a>
           </li>
           <li>
             <a href="#" onClick={() => dispatch(undo(strokes.length))}>
-              <img src={undoimg} style={{ height: "27px" }} alt="undo" />
+              <img src={undoimg} style={{ height: "22px" }} alt="undo" />
             </a>
           </li>
           <li>
             <a href="#" onClick={() => dispatch(redo())}>
-              <img src={redoimg} style={{ height: "27px" }} alt="redo" />
+              <img src={redoimg} style={{ height: "22px" }} alt="redo" />
             </a>
           </li>
         </ul>
       </div>
 
       <div className="color-section">
-        <div
-          className="current-color-container"
-          
-        >
-          <div className="current-color" style={{ background: currentStroke.color }}></div>
+        <div className="current-color-container">
+          <div
+            className="current-color"
+            style={{ background: currentStroke.color }}
+          ></div>
         </div>
 
         <div className="colors-container">
           <ColorPanel />
-          <p className="text-muted text-center">Colors</p>
+          <p className="text-muted text-center" style={{ marginTop: "30px" }}>
+            Colors
+          </p>
         </div>
       </div>
 
