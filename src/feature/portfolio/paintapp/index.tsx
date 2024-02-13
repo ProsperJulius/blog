@@ -6,10 +6,16 @@ import {
 } from "../../../app/slices/paintapp/currentstroke-slice";
 import { ColorPanel } from "./components/ColorPanel";
 import "./index.css";
-import { clearCanvas, drawStroke, setCanvasSize } from "./canvasUtils";
+import {
+  clearCanvas,
+  drawStroke,
+  getCanvasImage,
+  setCanvasSize,
+} from "./canvasUtils";
 import { Stroke } from "../../../types";
 import { endStroke } from "../../../app/slices/paintapp/sharedActions";
 import { redo, undo } from "../../../app/slices/paintapp/historyindex-slice";
+import { saveAs } from "file-saver";
 import redoimg from "./icons/redo.png";
 import undoimg from "./icons/undo.png";
 import saveimg from "./icons/save.png";
@@ -91,21 +97,42 @@ export const PaintApp = () => {
       });
     });
   }, [getCanvasWithContext, historyIndex, strokes]);
+
+  const dowloadImage = async () => {
+    if (!canvasRef) return;
+
+    const image = await getCanvasImage(canvasRef.current);
+
+    if (!image) return;
+
+    saveAs(image,'drawing.png');
+  };
+
   return (
     <div>
       <div className="paintapp-header">
         <ul>
           <li>
-            <a href="#" style={{lineHeight:"2.2"}}> File</a>
+            <a href="#" style={{ lineHeight: "2.2" }}>
+              {" "}
+              File
+            </a>
           </li>
           <li>
-            <a href="#" style={{lineHeight:"2.2"}}>Edit</a>
+            <a href="#" style={{ lineHeight: "2.2" }}>
+              Edit
+            </a>
           </li>
           <li>
             {" "}
             <a href="#">
               {" "}
-              <img src={saveimg} style={{ height: "19px", }} alt="save" />
+              <img
+                src={saveimg}
+                style={{ height: "19px" }}
+                alt="save"
+                onClick={dowloadImage}
+              />
             </a>
           </li>
           <li>
@@ -131,7 +158,7 @@ export const PaintApp = () => {
 
         <div className="colors-container">
           <ColorPanel />
-          <p className="text-muted text-center" style={{ marginTop: "30px" }}>
+          <p className="text-muted text-center" style={{ marginTop: "13px" }}>
             Colors
           </p>
         </div>
