@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Todo } from "../../../types";
 import { useAppDispatch } from "../../../app/hooks";
-import { completeTodo, deleteTodo, editTodo } from "../../../app/slices/todoapp/todo-slice";
+import {
+  completeTodo,
+  deleteTodo,
+  editTodo,
+} from "../../../app/slices/todoapp/todo-slice";
 import classNames from "classnames";
 
 export interface TodoItemProps {
@@ -38,29 +42,28 @@ export const TodoItem = (todoItemProps: TodoItemProps) => {
 
   if (editing) {
     element = (
-      <input
-        type="text"
-        defaultValue={input}
-        onKeyDown={handleSave}
-        onInput={(e) => setInput(e.currentTarget.value)}
-        onMouseOut={() => setEditing(false)}
-      />
+      
+        <input
+          type="text"
+          defaultValue={input}
+          className="new-todo"
+          onKeyDown={handleSave}
+          onInput={(e) => setInput(e.currentTarget.value)}
+          onMouseOut={() => setEditing(false)}
+        />
+  
     );
   } else {
     element = (
-      <div>
+      <div className="view">
         <input
           className="toggle"
-          style={{border:"none"}}
           type="checkbox"
           checked={todoItem.isCompleted}
           onChange={handleToggle}
         />
 
-        <label className="view" onDoubleClick={handleDoubleClick}>
-          {" "}
-          {todoItem.content}
-        </label>
+        <label onDoubleClick={handleDoubleClick}>{todoItem.content}</label>
         <button
           className="destroy todo-button"
           onClick={() => dispatch(deleteTodo(todoItem))}
@@ -71,10 +74,7 @@ export const TodoItem = (todoItemProps: TodoItemProps) => {
 
   return (
     <li
-      className={classNames(
-        { completed: todoItem.isCompleted },
-        { edit: editing },{view:true}
-      )}
+      className={classNames({ completed: todoItem.isCompleted }, { editing:editing })}
       key={todoItem.id}
     >
       {element}

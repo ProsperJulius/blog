@@ -15,6 +15,9 @@ import { store } from "./app/store";
 import { fetchLocalTodos } from "./app/slices/todoapp/todo-slice";
 import { PaintApp } from "./feature/portfolio/paintapp";
 import { CanvasProvider } from "./feature/portfolio/paintapp/CanvasContext";
+import { ColorPanel } from "./feature/portfolio/paintapp/components/ColorPanel";
+import { CanvasComponent } from "./feature/portfolio/paintapp/components/CanvasComponent";
+import { PaintHeader } from "./feature/portfolio/paintapp/components/PaintHeader";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +35,16 @@ const router = createBrowserRouter([
           { index: true, element: <PortfolioList /> },
           { path: "todo", element: <TodoApp /> },
 
-          {path:"paint",element: <PaintApp/>}
+          {
+            path: "paint",
+            element: (
+              <PaintApp
+                colorComponent={<ColorPanel />}
+                canvasComponent={<CanvasComponent />}
+                headerComponent={<PaintHeader />}
+              />
+            ),
+          },
         ],
       },
 
@@ -47,9 +59,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
       <CanvasProvider>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
       </CanvasProvider>
-     
     </Provider>
   </React.StrictMode>
 );
