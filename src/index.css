@@ -8,11 +8,16 @@
   justify-content: center;
   width: 100%;
 }
-.portfolio-element  {
+.portfolio-element {
   margin: 20px 0 20px 0;
   text-align: start;
-  width: 40%;
-  
+  width: 100%;
+}
+
+.portfolio li {
+  list-style-type: "👉";
+  margin-bottom: 50px;
+  list-style-position: calc();
 }
 .btn-rounded {
   border-radius: 3rem;
@@ -49,7 +54,7 @@
 }
 
 .remove-decoration {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .nav-bar li {
