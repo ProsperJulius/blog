@@ -17,7 +17,7 @@
     border: 1.5px solid #0b5ed7 !important;
 }
 .quiz-container li:hover {
-    border: 1.5px solid #b83f45 !important;
+    border: 1.5px solid #0b5ed7 !important;
 }
 .quiz-container li{
   margin-top: 20px;
@@ -28,11 +28,6 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 40%;
-}
-
-.radio-button {
-  height: 30px;
-  width: 30px;
 }
 
 .quiz-block .radio-button:focus {
@@ -46,14 +41,11 @@
 .quiz-container input {
   margin: 5px;
 }
-.quiz-block h3 {
-  font-weight: 200;
-  text-align: center;
-  color: #0b5ed7;
-}
+
 .quiz-block .btn-primary{
     
     width: 100px;
     margin-top: 20px;
+
     border-radius: 15px;
 }
