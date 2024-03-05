@@ -1,0 +1,1 @@
+export const COUNTRIES_ENDPOINT = "https://countriesnow.space/api/v0.1/countries/capital";

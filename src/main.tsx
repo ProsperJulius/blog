@@ -18,6 +18,8 @@ import { CanvasProvider } from "./feature/portfolio/paintapp/CanvasContext";
 import { ColorPanel } from "./feature/portfolio/paintapp/components/ColorPanel";
 import { CanvasComponent } from "./feature/portfolio/paintapp/components/CanvasComponent";
 import { PaintHeader } from "./feature/portfolio/paintapp/components/PaintHeader";
+import { fetchCountries } from "./app/slices/quiz/quiz-slice";
+import { CapitalCityQuizApp } from "./feature/portfolio/quiz-capital";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,7 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <PortfolioList /> },
           { path: "todo", element: <TodoApp /> },
+          {path:"capitalcityquiz", element:<CapitalCityQuizApp/>},
 
           {
             path: "paint",
@@ -53,7 +56,8 @@ const router = createBrowserRouter([
   },
 ]);
 
-store.dispatch(fetchLocalTodos()); /// dispatch action to fetch todos from the local forage
+store.dispatch(fetchLocalTodos()); // dispatch action to fetch todos from the local forage
+store.dispatch(fetchCountries()); //  dispatch action to fetch countries from the country end point
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

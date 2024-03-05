@@ -16,3 +16,11 @@ export interface Point {
    x: number;
    y: number;
 }
+
+
+export interface Country{
+   name:string;
+   capital:string;
+   iso2:string;
+   iso3
+}
