@@ -1,6 +1,33 @@
 .body {
   overflow: hidden;
 }
+.todo-header-container{
+  display: flex;
+  justify-content: center;
+}
+.todo-header-element{
+
+  width: 50%;
+}
+
+.todo-select{
+  width: 200px;
+  padding: 5px 10px;
+  height: 40px;
+  box-shadow: 0 1px 1px #ededed, 0 8px 0 -3px #f6f6f6;
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  text-align: center;
+  appearance: none; /* remove default appearance set by the browser */
+  outline: none; /* remove the outline shown on focus */
+  cursor: pointer; /* change the mouse cursor icon */
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+
+}
 .portfolio {
   display: flex;
   flex-direction: column;
