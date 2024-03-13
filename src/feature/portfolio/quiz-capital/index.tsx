@@ -15,7 +15,7 @@ export const CapitalCityQuizApp = () => {
   return (
     <div className="quiz-container">
       <div className="quiz-block">
-        <h3>What is the Capital city of {answer?.name} 🤔</h3>
+        <h3 className="text-primary">What is the Capital city of {answer?.name} 🤔</h3>
 
         <CapitalCityOptions />
 
