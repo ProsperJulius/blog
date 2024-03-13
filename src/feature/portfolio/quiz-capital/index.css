@@ -16,6 +16,13 @@
 .quiz-container li.clicked {
     border: 1.5px solid #0b5ed7 !important;
 }
+
+.quiz-container li.wrong {
+    border: 1.5px solid red !important;
+}
+.quiz-container li.correct{
+  border: 1.5px solid #0b5ed7 !important;
+}
 .quiz-container li:hover {
     border: 1.5px solid #0b5ed7 !important;
 }
