@@ -74,7 +74,7 @@ const todoSlice = createSlice({
             state.todos[state.selectedPeriod].forEach(todo => {
 
                 if (todo.id === action.payload.id) {
-                    todo.isCompleted = true;
+                    todo.isCompleted = !todo.isCompleted;
                 }
             })
 
