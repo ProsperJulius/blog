@@ -18,7 +18,10 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <h1>todos</h1>
+      <div className="todo-header-container">
+        <h1>todos</h1>
+        
+      </div>
 
       <input
         className="new-todo"

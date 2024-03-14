@@ -42,16 +42,14 @@ export const TodoItem = (todoItemProps: TodoItemProps) => {
 
   if (editing) {
     element = (
-      
-        <input
-          type="text"
-          defaultValue={input}
-          className="new-todo"
-          onKeyDown={handleSave}
-          onInput={(e) => setInput(e.currentTarget.value)}
-          onMouseOut={() => setEditing(false)}
-        />
-  
+      <input
+        type="text"
+        defaultValue={input}
+        className="new-todo"
+        onKeyDown={handleSave}
+        onInput={(e) => setInput(e.currentTarget.value)}
+        onMouseOut={() => setEditing(false)}
+      />
     );
   } else {
     element = (
@@ -74,7 +72,7 @@ export const TodoItem = (todoItemProps: TodoItemProps) => {
 
   return (
     <li
-      className={classNames({ completed: todoItem.isCompleted }, { editing:editing })}
+      className={classNames({ completed: todoItem.isCompleted }, { editing })}
       key={todoItem.id}
     >
       {element}

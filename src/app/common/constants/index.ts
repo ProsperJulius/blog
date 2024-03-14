@@ -1,0 +1,1 @@
+export const TODO_PERIODS = <const> ['daily', 'weekly','monthly','yearly'];
