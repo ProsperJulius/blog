@@ -25,7 +25,6 @@ export const useDeviceType = () => {
         }
     }, [])
 
-
     const isMobile = width <= 768;
     const isTablet = width <= 1024;
     const isDeskTop = width > 1024;
