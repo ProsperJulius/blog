@@ -58,26 +58,19 @@ const todoSlice = createSlice({
             setLocalTodos(state);
         },
         editTodo(state, action: PayloadAction<Todo>) {
-
-            state.todos[state.selectedPeriod].forEach(todo => {
-
-                if (todo.id === action.payload.id) {
-                    todo.content = action.payload.content;
-                }
-            })
-
+            const todoToEdit = state.todos[state.selectedPeriod].find(todo => todo.id === action.payload.id);
+            if (todoToEdit) {
+                todoToEdit.content = action.payload.content;
+            }
             setLocalTodos(state);
         },
 
         completeTodo(state, action: PayloadAction<Todo>) {
 
-            state.todos[state.selectedPeriod].forEach(todo => {
-
-                if (todo.id === action.payload.id) {
-                    todo.isCompleted = !todo.isCompleted;
-                }
-            })
-
+            const todoToComplete = state.todos[state.selectedPeriod].find(todo => todo.id === action.payload.id);
+            if (todoToComplete) {
+                todoToComplete.isCompleted = !todoToComplete.isCompleted;
+            }
             setLocalTodos(state);
         },
         clearCompleted(state) {

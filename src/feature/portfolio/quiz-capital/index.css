@@ -24,7 +24,7 @@
   border: 1.5px solid #0b5ed7 !important;
 }
 .quiz-container li:hover {
-    border: 1.5px solid #0b5ed7 !important;
+    border: 1.5px solid #0b5ed7;
 }
 .quiz-container li{
   margin-top: 20px;
